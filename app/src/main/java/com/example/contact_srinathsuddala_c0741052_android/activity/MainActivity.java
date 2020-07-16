@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements ContactClickListn
                 contact.setMobile( cursor.getString(3) );
                 contact.setEmail( cursor.getString(4) );
                 contact.setImage( cursor.getString(5) );
+                contact.setAddress( cursor.getString(6) );
 
                 contacts.add(contact);
 
