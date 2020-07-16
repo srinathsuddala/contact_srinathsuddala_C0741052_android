@@ -10,6 +10,7 @@ public class Contact implements Parcelable {
     private String mobile;
     private String email;
     private String image;
+    private String address;
 
     public int getId() {
         return id;
@@ -97,4 +98,12 @@ public class Contact implements Parcelable {
             return new Contact[size];
         }
     };
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
