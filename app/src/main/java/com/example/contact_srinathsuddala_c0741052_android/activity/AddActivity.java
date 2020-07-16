@@ -36,7 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AddActivity extends AppCompatActivity {
-    EditText firstName,lastName,phone,email;
+    EditText firstName,lastName,phone,email,address;
     ImageView imageView;
     private String userChoosenTask;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
@@ -49,6 +49,7 @@ public class AddActivity extends AppCompatActivity {
         phone = findViewById(R.id.editNumber);
         email = findViewById(R.id.editEmail);
         imageView = findViewById(R.id.imageButtonAdd);
+        address = findViewById(R.id.editAddress);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,6 +203,8 @@ public class AddActivity extends AppCompatActivity {
         values.put(DbHelper.COLUMN_4,phone.getText().toString());
         values.put(DbHelper.COLUMN_5,email.getText().toString());
         values.put(DbHelper.COLUMN_6,result);
+        values.put(DbHelper.COLUMN_7,address.getText().toString());
+
 
         long insertId = db.insert(DbHelper.TABLE_NAME,null,values);
         Toast.makeText(this,"Inserted 1 item..", Toast.LENGTH_SHORT).show();
