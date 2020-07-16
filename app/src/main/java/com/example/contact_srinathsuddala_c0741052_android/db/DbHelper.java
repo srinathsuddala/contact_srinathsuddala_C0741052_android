@@ -16,13 +16,15 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_4 = "PHONE";
     public static final String COLUMN_5 = "EMAIL";
     public static final String COLUMN_6 = "IMAGE";
+    public static final String COLUMN_7 = "ADDRESS";
     public static final String QUERY_CREATE = "CREATE TABLE "+TABLE_NAME+" ("
             +COLUMN_1+" INTEGER PRIMARY KEY AUTOINCREMENT, "
             +COLUMN_2+" TEXT, "
             +COLUMN_3+" TEXT, "
             +COLUMN_4+" TEXT, "
             +COLUMN_5+" TEXT, "
-            +COLUMN_6+" TEXT)";
+            +COLUMN_6+" TEXT, "
+            +COLUMN_7+" TEXT)";
 
     public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DB_NAME, null, DB_VERSION);

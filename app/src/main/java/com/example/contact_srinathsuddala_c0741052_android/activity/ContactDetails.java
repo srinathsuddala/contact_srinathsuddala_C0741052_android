@@ -36,7 +36,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class ContactDetails extends AppCompatActivity {
-    TextView fName,lName,mobile,email;
+    TextView fName,lName,mobile,email,address;
     ImageView imageView;
     ImageButton call,message,mail;
     @Override
@@ -48,6 +48,7 @@ public class ContactDetails extends AppCompatActivity {
         lName = findViewById(R.id.detailsLastName);
         mobile = findViewById(R.id.detailsMobileNumber);
         email = findViewById(R.id.detailsEmailId);
+        address = findViewById(R.id.detailsAddress);
         imageView = findViewById(R.id.imageViewDetails);
         call =(ImageButton) findViewById(R.id.buttonCall);
         message =(ImageButton) findViewById(R.id.buttonMessage);
@@ -66,6 +67,7 @@ public class ContactDetails extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(arr,0,arr.length);
             imageView.setImageBitmap(bitmap);
         }
+        address.setText(contact.getAddress());
 
             if ((ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
                     != PackageManager.PERMISSION_GRANTED) &&
@@ -109,6 +111,7 @@ public class ContactDetails extends AppCompatActivity {
                 contact.setMobile(cursor.getString(3));
                 contact.setEmail(cursor.getString(4));
                 contact.setImage(cursor.getString(5));
+                contact.setAddress(cursor.getString(6));
 
                 contacts.add(contact);
 
